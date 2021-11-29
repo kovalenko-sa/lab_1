@@ -1,0 +1,15 @@
+# Hashes of file build rules.
+2c78f1d98e83efffd34fcf75c3503417 /home/semyon/workspace/devel/include/my_service/roulette.h
+1884c3110c3f8a7d61b7b6c87d30e5f6 /home/semyon/workspace/devel/lib/python3/dist-packages/my_service/srv/__init__.py
+9b46704315a5767434273d9f409e1edb /home/semyon/workspace/devel/lib/python3/dist-packages/my_service/srv/_roulette.py
+ffef1f93bbdfb4d05815460bba4c1aaf /home/semyon/workspace/devel/share/common-lisp/ros/my_service/srv/roulette.lisp
+5f1ee0a562ae692737af3350f5d21b9b /home/semyon/workspace/devel/share/gennodejs/ros/my_service/srv/roulette.js
+ec3b39af1970308e8380a3449b425f02 /home/semyon/workspace/devel/share/roseus/ros/my_service/manifest.l
+7d608ef6acfdddabdf63afdd2b525e75 /home/semyon/workspace/devel/share/roseus/ros/my_service/srv/roulette.l
+ba4adc5bb203df902add257eb6926d53 CMakeFiles/clean_test_results
+5aebfde1f24fb6b0bc414ab240af7e38 my_service/CMakeFiles/_my_service_generate_messages_check_deps_roulette
+a624a4d6de83bd91c4aa74f77be1e2d0 my_service/CMakeFiles/my_service_generate_messages_cpp
+a624a4d6de83bd91c4aa74f77be1e2d0 my_service/CMakeFiles/my_service_generate_messages_eus
+a624a4d6de83bd91c4aa74f77be1e2d0 my_service/CMakeFiles/my_service_generate_messages_lisp
+a624a4d6de83bd91c4aa74f77be1e2d0 my_service/CMakeFiles/my_service_generate_messages_nodejs
+a624a4d6de83bd91c4aa74f77be1e2d0 my_service/CMakeFiles/my_service_generate_messages_py

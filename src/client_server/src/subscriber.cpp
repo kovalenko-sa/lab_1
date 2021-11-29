@@ -8,6 +8,7 @@ bool add(my_service::roulette::Request &req, my_service::roulette::Response &res
 {
  int nmbr;
  int clr;
+ std::string ans;
  
  nmbr = rand() %37;
  
@@ -15,9 +16,12 @@ bool add(my_service::roulette::Request &req, my_service::roulette::Response &res
   {
    res.result = true;
   }
-  else res.result = false;
+  else 
+  {
+   res.result = false;
+  }
  //ROS_INFO("request: %d, %s", req.number, req.color);
- //ROS_INFO("sending back responce:[%s]", res.result);
+ //ROS_INFO("sending back responce:[%c]", ans);
  return 1;
 }
  

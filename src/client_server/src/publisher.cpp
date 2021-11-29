@@ -3,14 +3,19 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include "std_msgs/String.h"
+#include <sstream>
 
 int main(int argc, char **argv)
 {
  ros::init(argc, argv, "add_publisher");
- 
+ ros::init(argc, argv, "talker");
  ros::NodeHandle n;
  ros::ServiceClient client = n.serviceClient<my_service::roulette>("play_roulette");
+ ros::Publisher chatter = n.advertise<std_msgs::String>("chatter", 1000);
  my_service::roulette srv;
+ 
+ ros::Rate loop_rate(50);
  
  while (ros::ok())
  {
@@ -25,28 +30,22 @@ int main(int argc, char **argv)
   srv.request.color = b;
   client.call(srv);
   
-  int rnd;
-  rnd = rand() %3 +1;
   
+  std_msgs::String msg;
+  std::stringstream ss;
   if(srv.response.result == true)
   {
-   std::cout<<"Congratulations, you win!!!"<<srv.response.result<<std::endl;
+   ss << "win";
   }
   else
   {
-   switch(rnd)
-   {
-    case 1:
-     std::cout<<"You lose, sorry, maybe next time"<<srv.response.result<<std::endl;
-     break;
-    case 2:
-     std::cout<<"You've lost, try again, you'll be lucky"<<srv.response.result<<std::endl;
-     break;
-    case 3:
-     std::cout<<"You lost (( Unlucky in roulette, lucky in love!"<<srv.response.result<<std::endl;
-     break;
-    }
+   ss << "lose";
   }
+  
+  msg.data = ss.str();
+  chatter.publish(msg);
+  ros::spinOnce();
+  loop_rate.sleep();
  }
  
  return 0;
